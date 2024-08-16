@@ -80,9 +80,6 @@ if openai_api_key:
             st.write("Processing Documents........")
             time.sleep(1)
             comparison_result = compare_documents(text_1, text_2)
-            # Display the full comparison result in an expander
-            with st.expander("Show Full Comparison Result"):
-                st.write(comparison_result)
 
     with col2:
         if uploaded_file_1:
