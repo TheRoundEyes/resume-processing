@@ -1,1 +1,7 @@
 streamlit
+Pillow
+PyMuPDF
+pytesseract
+python-docx
+langchain
+openai
