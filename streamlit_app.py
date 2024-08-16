@@ -90,11 +90,13 @@ if openai_api_key:
             if uploaded_file_1.type == "application/pdf":
                 st.write("Displaying the first PDF:")
                 uploaded_file_1.seek(0)  # Reset file pointer before displaying
-                pdf_viewer(uploaded_file_1)
+                pdf_bytes_1 = uploaded_file_1.read()  # Convert to bytes
+                pdf_viewer(pdf_bytes_1)
 
         if uploaded_file_2:
             if uploaded_file_2.type == "application/pdf":
                 st.write("Displaying the second PDF:")
                 uploaded_file_2.seek(0)  # Reset file pointer before displaying
-                pdf_viewer(uploaded_file_2)
+                pdf_bytes_2 = uploaded_file_2.read()  # Convert to bytes
+                pdf_viewer(pdf_bytes_2)
 
