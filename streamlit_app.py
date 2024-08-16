@@ -60,7 +60,7 @@ if openai_api_key:
 
 
 
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
 
     with col1:
         uploaded_file_1 = st.file_uploader("Upload the Job Description", type=["pdf", "docx", "txt"], key="file1")
@@ -91,7 +91,7 @@ if openai_api_key:
                 uploaded_file_1.seek(0)  # Reset file pointer before displaying
                 pdf_bytes_1 = uploaded_file_1.read()  # Convert to bytes
                 pdf_viewer(pdf_bytes_1, height=600)  # Set height to make it scrollable
-
+    with col3:
         if uploaded_file_2:
             if uploaded_file_2.type == "application/pdf":
                 st.write("Displaying the second PDF:")
