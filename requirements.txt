@@ -7,3 +7,4 @@ langchain
 openai
 pymupdf
 langchain-community
+streamlit-pdf-viewer
