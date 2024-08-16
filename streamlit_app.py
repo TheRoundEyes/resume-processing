@@ -77,7 +77,7 @@ if openai_api_key:
                 text_2 = extract_text_from_pdf(uploaded_file_2)
 
         if uploaded_file_1 and uploaded_file_2:
-            st.write("Comparing documents using Langchain LLM...")
+            st.write("Processing Documents........")
             time.sleep(1)
             comparison_result = compare_documents(text_1, text_2)
             # Display the full comparison result in an expander
@@ -98,4 +98,7 @@ if openai_api_key:
                 uploaded_file_2.seek(0)  # Reset file pointer before displaying
                 pdf_bytes_2 = uploaded_file_2.read()  # Convert to bytes
                 pdf_viewer(pdf_bytes_2, height=600)
+
+    with st.expander("Show Full Comparison Result"):
+        st.write(comparison_result)
 
