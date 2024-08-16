@@ -6,3 +6,4 @@ python-docx
 langchain
 openai
 pymupdf
+langchain-community
