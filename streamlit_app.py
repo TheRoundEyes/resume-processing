@@ -10,7 +10,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from streamlit_pdf_viewer import pdf_viewer
 
-st.set_page_config(layout='wide')
+st.set_page_config(layout='wide',page_title='Resume Processing | The Round Coder',page_icon=':pencil:')
 
 openai_api_key = st.text_input('Enter your OPEN API Key here', type='password')
 
