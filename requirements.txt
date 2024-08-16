@@ -5,3 +5,4 @@ pytesseract
 python-docx
 langchain
 openai
+pymupdf
