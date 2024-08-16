@@ -76,13 +76,12 @@ if openai_api_key:
                 st.write("Extracting text from the second PDF...")
                 text_2 = extract_text_from_pdf(uploaded_file_2)
 
-        if uploaded_file_1 and uploaded_file_2:
-            st.write("Processing Documents........")
-            time.sleep(1)
-            comparison_result = compare_documents(text_1, text_2)
-
-    with st.expander("Show Full Comparison Result"):
-        st.write(comparison_result)
+    if uploaded_file_1 and uploaded_file_2:
+        st.write("Processing Documents........")
+        time.sleep(1)
+        comparison_result = compare_documents(text_1, text_2)
+        with st.expander("Show Full Comparison Result"):
+            st.write(comparison_result)
 
     with col2:
         if uploaded_file_1:
