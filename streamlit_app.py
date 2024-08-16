@@ -21,16 +21,14 @@ if openai_api_key:
     prompt_template = PromptTemplate(
         input_variables=["doc1", "doc2"],
         template="""Compare these two documents and provide a detailed analysis:
-
-        Document 1:
-        {doc1}
-
-        Document 2:
-        {doc2}
-
-        **Candidate Fit Analysis**
-        1. Assess if the candidate is a good fit for the position based on the Job Description and Resume.
-        2. Describe how the candidate's skills align with the job requirements."""
+        {doc1} is the Job Description and {doc2} is the Resume.
+        Provide the following information:
+        1. How does the candidate's skills align with the job requirements?
+        2. What are the candidate's strengths and weaknesses?
+        3. Does the candidate have any relevant experience for the job position?
+        4. How does the candidate's education and work history align with the job requirements?
+        5. Any other relevant information that could help in evaluating the candidate's fit for the role?
+        Provide the analysis in bullet point format."""
 
     )
 
