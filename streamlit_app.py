@@ -1,14 +1,15 @@
 import streamlit as st
+import streamlit as st
 from PIL import Image
 import fitz  # PyMuPDF
 import pytesseract
 import io
 import time
-import base64
 from docx import Document  # Import Document class
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
+from streamlit_pdf_viewer import pdf_viewer
 
 st.set_page_config(layout='wide')
 
@@ -57,10 +58,7 @@ if openai_api_key:
         return chain.run({"doc1": doc1, "doc2": doc2})
 
 
-    def display_pdf_iframe(uploaded_file):
-        base64_pdf = base64.b64encode(uploaded_file.read()).decode('utf-8')
-        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
-        st.markdown(pdf_display, unsafe_allow_html=True)
+
 
 
     col1, col2 = st.columns(2)
@@ -92,11 +90,11 @@ if openai_api_key:
             if uploaded_file_1.type == "application/pdf":
                 st.write("Displaying the first PDF:")
                 uploaded_file_1.seek(0)  # Reset file pointer before displaying
-                display_pdf_iframe(uploaded_file_1)
+                pdf_viewer(uploaded_file_1)
 
         if uploaded_file_2:
             if uploaded_file_2.type == "application/pdf":
                 st.write("Displaying the second PDF:")
                 uploaded_file_2.seek(0)  # Reset file pointer before displaying
-                display_pdf_iframe(uploaded_file_2)
+                pdf_viewer(uploaded_file_2)
 
