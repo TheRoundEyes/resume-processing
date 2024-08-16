@@ -81,6 +81,9 @@ if openai_api_key:
             time.sleep(1)
             comparison_result = compare_documents(text_1, text_2)
 
+    with st.expander("Show Full Comparison Result"):
+        st.write(comparison_result)
+
     with col2:
         if uploaded_file_1:
             if uploaded_file_1.type == "application/pdf":
@@ -96,6 +99,5 @@ if openai_api_key:
                 pdf_bytes_2 = uploaded_file_2.read()  # Convert to bytes
                 pdf_viewer(pdf_bytes_2, height=600)
 
-    with st.expander("Show Full Comparison Result"):
-        st.write(comparison_result)
+
 
