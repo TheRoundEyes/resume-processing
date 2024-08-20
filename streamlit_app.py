@@ -12,6 +12,10 @@ from streamlit_pdf_viewer import pdf_viewer
 
 st.set_page_config(layout='wide',page_title='Resume Processing | The Round Coder',page_icon=':pencil:')
 
+st.title('CV Processing ')
+st.write('This app allows you to do pre-screening of the resumes and job descriptions. You can upload two documents in PDF')
+st.write('1st document should be the Job Description and 2nd document should be the Resume. The app will extract the text from the documents and compare them using the Langchain Language Model (LLM).')
+
 openai_api_key = st.text_input('Enter your OPEN API Key here', type='password')
 
 # Initialize the OpenAI embeddings if API key is provided
